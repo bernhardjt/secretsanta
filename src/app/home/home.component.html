@@ -1,0 +1,51 @@
+<div style="text-align: center; margin: 20px" class="box">
+  <div *ngIf="!shuffled">
+    <h1>Add Santa's</h1>
+
+    <input style="height: 30px; font-size: 20px" placeholder="enter name" matInput type="text" #box required />
+    <button style="margin-left: 5px" color="primary" mat-button matSuffix mat-stroked-button aria-label="plus_one"
+      (click)="addSanta(box.value)">
+      <mat-icon>plus_one</mat-icon>
+    </button>
+
+    <br />
+    <div *ngIf="santas.length > 2">
+      <button style="margin-top: 20px" mat-fab color="primary" (click)="shuffleSanta()">
+        <mat-icon>shuffle</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="santas.length > 0" style="margin-top: 20px">
+      <ol>
+        <li *ngFor="let santa of santas">
+          {{ santa.name }}
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div *ngIf="shuffled">
+    <h1>Santa's</h1>
+
+    <table style="width: 500px">
+      <tr>
+        <th>You</th>
+        <th>Presentee</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let santa of santas">
+        <td>{{ santa.name }}</td>
+        <td>{{ santa.hidden ? "****" : santa.presentee }}</td>
+
+        <td>
+          <button mat-mini-fab color="primary" *ngIf="santa.hidden" aria-label="unlock" (click)="showItem(santa)">
+            <mat-icon>lock_open</mat-icon>
+          </button>
+          <button mat-mini-fab color="warn" *ngIf="!santa.hidden" aria-label="lock" (click)="removeItem(santa)">
+            <mat-icon>lock</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
