@@ -1,9 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <span>secretsanta (without backend)</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <span>secretsanta (without backend)</span>
+            <span class="left-spacer"></span>
+            <a target="_blank" href="https://github.com/bernhardjt/secretsanta/">
+                <img height="32" width="32" src="https://unpkg.com/simple-icons@v4/icons/github.svg" />
+            </a>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>
