@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
 
     this.santas.push({ name: name, hidden: true });
     this.inputName.nativeElement.value = ''; // clean input field
+    this.inputName.nativeElement.focus();
     return true;
   }
 

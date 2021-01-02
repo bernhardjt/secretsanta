@@ -1,5 +1,16 @@
 # Secretsanta
 
+URL: https://santa.lynik.de/
+
+This SPA/tool is a secretsanta lottery (offline),
+no data leave your browser. 
+
+requirements:
+- all santas must be on site
+- min 3 santas
+
+https://en.wikipedia.org/wiki/Secret_Santa
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
 ## Development server

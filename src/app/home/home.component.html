@@ -2,7 +2,7 @@
   <div *ngIf="!shuffled">
     <h1>Add Santa's</h1>
 
-    <input style="height: 30px; font-size: 20px" placeholder="enter name" matInput type="text" #box required />
+    <input style="height: 30px; font-size: 20px" placeholder="enter name" matInput type="text" #box autofocus required (keyup.enter)="addSanta(box.value)"/>
     <button style="margin-left: 5px" color="primary" mat-button matSuffix mat-stroked-button aria-label="plus_one"
       (click)="addSanta(box.value)">
       <mat-icon>plus_one</mat-icon>
